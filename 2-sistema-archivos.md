@@ -292,7 +292,7 @@ df -h
 du -sh
 ```
 
-![](images/2/du.png)
+![](images/2/du.PNG)
 
 ## Compresión y descompresión de ficheros ##
 
@@ -629,7 +629,7 @@ leonardo@leonardo-VB:~$ ssh leonardo@192.168.50.123
 # password: Password del usuario.
 ```
 
-![](images/2/ssh.png)
+![](images/2/ssh.PNG)
 
 ### SCP
 
@@ -688,5 +688,5 @@ leonardo@leonardo-VB:~$ scp /ruta/al/directorio/* usuario@servidor:/ruta/al/dire
 leonardo@leonardo-VB:~$ wget https://github.com/iluwatar/java-design-patterns/archive/1.20.0.tar.gz
 ```
 
-![](images/2/wget.png)
+![](images/2/wget.PNG)
 
