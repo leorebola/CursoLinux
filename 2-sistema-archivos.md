@@ -117,6 +117,19 @@ Ej:
 - /home/user2/
 - /home/user3/
 
+### Archivos de configuración
+
+```console
+$ pwd
+/home/leonardo
+$ ls -la
+drwx------ 2 ana  ana  4096 jul  9 09:54 .
+drwxr-xr-x 7 root root 4096 jul  9 09:54 ..
+-rw-r--r-- 1 ana  ana    24 jul  9 09:54 .bash_logout
+-rw-r--r-- 1 ana  ana   191 jul  9 09:54 .bash_profile
+-rw-r--r-- 1 ana  ana   124 jul  9 09:54 .bashrc
+```
+
 ## Mover, renombrar y copiar ficheros ##
 
 - mv

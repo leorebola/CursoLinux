@@ -10,15 +10,20 @@
 
 - Multiusuarios
 
+```console
+$ id -u username
+```
+
 Tipo de usuario
-- root
-- especiales
+- root (superusuario o administrador)
+- especiales (cuentas de sistema)
 - normales
 
 ```console
 $ cat /etc/passwd
 
 root:x:0:0:root:/root:/bin/bash
+
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin
 adm:x:3:4:adm:/var/adm:/sbin/nologin
@@ -36,7 +41,7 @@ leonardo:x:1018:100:Usuario de Leonardo:/home/leonardo:/bin/bash
 ### Grupos
 
 ```console
-$cat /etc/group
+$ cat /etc/group
 
 root:x:0:
 bin:x:1:
@@ -48,20 +53,36 @@ users:x:100:user65247,user46293,user50222,user0970,user6920,user3162,user8340,us
 ...
 ```
 
-### Archivos de configuración
+## Intérprete de comandos (shell)
 
-```console
-$ pwd
-/home/leonardo
-$ ls -la
-drwx------ 2 ana  ana  4096 jul  9 09:54 .
-drwxr-xr-x 7 root root 4096 jul  9 09:54 ..
--rw-r--r-- 1 ana  ana    24 jul  9 09:54 .bash_logout
--rw-r--r-- 1 ana  ana   191 jul  9 09:54 .bash_profile
--rw-r--r-- 1 ana  ana   124 jul  9 09:54 .bashrc
-```
-
-## Intérprete de comandos
+![](images/1/ShellOInterpreteDeComandos.png)
 
 ![](images/1/term.png)
 
+![](images/1/1275454609_flow1.jpg)
+
+Cómo ejecuta un comando:
+- orden interna
+- alias
+- path
+
+Sintaxis:
+
+```console
+$ pepe
+bash: pepe: command not found
+```
+
+```console
+$ programa arg1 arg2 ... argn 
+```
+
+```console
+$ programa1;programa2 arg1 arg2;programa3
+```
+
+```console
+$ programa1 arg1 \
+arg2 \
+arg3
+```
