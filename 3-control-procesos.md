@@ -11,6 +11,10 @@
 Ejemplos de uso frecuente:
 
 ```console
+$ ps
+```
+
+```console
 $ ps aux
 ```
 
@@ -81,21 +85,16 @@ free -s 3 -c 5
 ```
 
 ```console
-feee -t
+free -t
 ```
-
-
-
-
-
-
-
-
-
 
 ## top
 
-https://aplicacionesysistemas.com/load-average-carga-de-cpu-en-linux/
+![](images/3/top_top.png)
+
+![](images/3/top_tail.png)
+
+- https://aplicacionesysistemas.com/load-average-carga-de-cpu-en-linux/
 
 ```console
 $ top

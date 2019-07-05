@@ -231,7 +231,7 @@ Comando **ls**
 
 Comando **ls -l**
 
-![](images/2/ls-l.png)
+![](images/2/ll.png)
 
 Ejemplos:
 
@@ -275,6 +275,42 @@ chmod 755 file.txt
 
 ```console
 chmod -R 755 /other/directory/
+```
+
+- https://chmod-calculator.com/
+
+### Cambiar usuario/grupo dueño de un archivo o directorio:
+```console
+$ chown usuario[:grupo] archivo(s) o directorio(s)
+
+$ chown -R usuario[:grupo] archivo(s) o directorio(s)
+
+# entre [] lo opcional (grupo).
+```
+
+Ejemplo:
+```console
+$ chown homero archivo.txt
+```
+
+```console
+$ chown homero:cantinademoe archivo.txt
+```
+
+```console
+$ chown -R homero /datos/logs/app_homero/
+```
+
+### Cambiar grupo dueño de un archivo o directorio:
+
+```console
+$ chgrp grupo archivo(s) o directorio(s)
+```
+
+Ejemplo:
+
+```console
+$ chgrp cantinademoe archivo.txt
 ```
 
 ## Información sobre el sistema de archivos ##
