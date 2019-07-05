@@ -100,6 +100,11 @@ $ top
 
 - https://aplicacionesysistemas.com/load-average-carga-de-cpu-en-linux/
 
+Tip:
+```console
+$ top -bcn1 -w512
+```
+
 ## screen
 
 ```console

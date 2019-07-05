@@ -36,29 +36,31 @@ comando &> fichero |	Envía la salida estándar y de error a fichero; equivale a
 
 - Ejemplo:
 ```console
-ls -l /home/pruebas 1> exito.txt
-ls -l /home/pruebas 2> error.txt
+$ ls -l /home/pruebas 1> exito.txt
+$ ls -l /home/pruebas 2> error.txt
 
-cat exito.txt
-cat error.txt
+$ cat exito.txt
+$ cat error.txt
 ```
 
 ```console
-mycommand > mycommand.out 2> mycommand.err
+$ mycommand > mycommand.out 2> mycommand.err
+
+# Redirigir la salida estándar y el error estándar a diferentes archivos.
 ```
 
 ```console
-wc < archivo.txt
+$ wc < archivo.txt
 ```
 
 ```console
-grep < archivo.txt "Hola"
+$ grep < archivo.txt "Hola"
 ```
 
 ## Pipes (o Tuberías) ##
 
 ```console
-comando1 | comando2
+$ comando1 | comando2
 ```
 
 ![](images/4/tuberias.png)
@@ -66,9 +68,9 @@ comando1 | comando2
 ![](images/4/pipelines.jpg)
 
 ```console
-cat archivo.txt | wc
+$ cat archivo.txt | wc
 ```
 
 ```console
-cat archivo.txt | grep "Hola"
+$ cat archivo.txt | grep "Hola"
 ```
