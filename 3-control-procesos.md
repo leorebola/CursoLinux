@@ -90,15 +90,15 @@ free -t
 
 ## top
 
+```console
+$ top
+```
+
 ![](images/3/top_top.png)
 
 ![](images/3/top_tail.png)
 
 - https://aplicacionesysistemas.com/load-average-carga-de-cpu-en-linux/
-
-```console
-$ top
-```
 
 ## screen
 
