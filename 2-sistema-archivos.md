@@ -370,7 +370,7 @@ gzip -f filename
 ```
 
 ```console
-gzip -f filename
+gzip -k filename
 
 # -k: keep the original file
 ```
