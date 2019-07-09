@@ -157,6 +157,153 @@ Búsqueda:
 - uniq
 - shuf
 
+
+### wc (word count) 
+
+Parámetros:
+
+```console
+$ wc -l filename
+
+# número de lineas 
+```
+
+```console
+$ wc -m filename
+
+# imprime el número de caracteres
+```
+
+```console
+$ wc -L filename
+
+# imprime la longitud de la línea más larga
+```
+
+```console
+$ wc -w filename
+
+# imprime el número de palabras
+```
+
+Ejemplos:
+
+```console
+$ wc -l *.txt
+
+  240 countries.txt
+  104 iso_8859-1.txt
+    8 linux.txt
+    3 users.txt
+  355 total
+```
+
+```console
+$ cat /etc/passwd | grep /home | wc -l 
+   3
+```
+
+```console
+$ ls | wc -l
+```
+
+### grep (Global Regular Expression Print)
+
+```console
+$ grep option search_pattern filename
+```
+
+Parámetros y formas de usar:
+
+```console
+$ grep PALABRA filename
+```
+
+```console
+$ grep PALABRA *.txt
+```
+
+```console
+$ grep PALABRA *.txt > resultados.txt
+```
+
+```console
+$ grep -i PALABRA *.txt
+
+# case insensitive
+```
+
+```console
+$ grep -r PALABRA /home/user1/
+```
+
+```console
+$ grep -n PALABRA *.txt
+
+# mostrar el número de línea en el que coincide el patrón
+```
+
+```console
+$ grep -color PALABRA *.txt
+```
+
+```console
+Otros parámetros:
+
+-E nos permite usar expresiones regulares. Equivalente a usar egrep.
+-H nos imprime el nombre del archivo con cada coincidencia.
+```
+
+### cut
+
+```console
+
+```
+
+```console
+
+```
+
+### sed
+
+```console
+
+```
+
+```console
+
+```
+
+### sort
+
+```console
+
+```
+
+```console
+
+```
+
+### uniq
+
+```console
+
+```
+
+```console
+
+```
+
+### shuf
+
+```console
+
+```
+
+```console
+
+```
+
 ## Unir ficheros ##
 
 - paste
