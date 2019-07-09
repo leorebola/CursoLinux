@@ -11,11 +11,11 @@
 ### cat
 
 ```console
-$ cat filename
+$ cat myfile
 ```
 
 ```console
-$ cat filename1 filename2
+$ cat myfile1 myfile2
 ```
 
 ```console
@@ -29,41 +29,41 @@ $ cat filename1 filename2
 Copiar contenido a otro archivo:
 
 ```console
-$ cat filename > filename-new
+$ cat myfile > myfile-new
 ```
 
 ```console
-$ cat filename >> filename-new
+$ cat myfile >> myfile-new
 ```
 
 ```console
-$ cat filename1 filename2 > filename-new
+$ cat myfile1 myfile2 > myfile-new
 ```
 
 ### head
 
 ```console
-$ head filename
+$ head myfile
 ```
 ```console
-$ head -5 filename
+$ head -5 myfile
 ```
 ```console
-$ head -c5 filename
+$ head -c5 myfile
 ```
 
 ### tail
 
 ```console
-$ tail filename
+$ tail myfile
 ```
 
 ```console
-$ tail -5 filename
+$ tail -5 myfile
 ```
 
 ```console
-$ tail -f filename
+$ tail -f myfile
 ```
 
 ```console
@@ -83,29 +83,29 @@ $ tail -f filename
 | *Image from: https://linuxhandbook.com/wp-content/uploads/2018/08/less-command-examples-linux-featured.png* |
 
 ```console
-$ less filename
+$ less myfile
 ```
 
 Argumentos útiles:
 
 ```console
-$ less -N filename
+$ less -N myfile
 
 # Mostrar número de cada línea
 ```
 
 ```console
-$ less -p BUSCAR_ALGO filename
+$ less -p BUSCAR_ALGO myfile
 ```
 
 ```console
-$ less +n filename
+$ less +n myfile
 
 # Muestra el archivo desde la linea n
 ```
 
 ```console
-$ less -M filename
+$ less -M myfile
 
 # Muestra información: cantidad de lineas, % de avance
 ```
@@ -117,15 +117,15 @@ $ file * | less
 ```
 
 ```console
-$ less -S filename
+$ less -S myfile
 
 # Deshabilitar auto-ajuste de líneas
 ```
 
 ```console
-$ less +F filename
+$ less +F myfile
 
-# Idem a: tail -f filename
+# Idem a: tail -f myfile
 ```
 
 Comandos:
@@ -163,25 +163,25 @@ Búsqueda:
 Parámetros:
 
 ```console
-$ wc -l filename
+$ wc -l myfile
 
 # número de lineas 
 ```
 
 ```console
-$ wc -m filename
+$ wc -m myfile
 
 # imprime el número de caracteres
 ```
 
 ```console
-$ wc -L filename
+$ wc -L myfile
 
 # imprime la longitud de la línea más larga
 ```
 
 ```console
-$ wc -w filename
+$ wc -w myfile
 
 # imprime el número de palabras
 ```
@@ -210,13 +210,13 @@ $ ls | wc -l
 ### grep (Global Regular Expression Print)
 
 ```console
-$ grep option search_pattern filename
+$ grep option search_pattern myfile
 ```
 
 Parámetros y formas de usar:
 
 ```console
-$ grep PALABRA filename
+$ grep PALABRA myfile
 ```
 
 ```console
@@ -257,21 +257,160 @@ Otros parámetros:
 ### cut
 
 ```console
+$ cut options myfile
 
+# Parámetros más usados:
+
+-f: Selecciona los campos (columnas) indicadas en el o los rangos.
+-d: Especifica el caracter delimitador de los campos,
+-s: Indica que las líneas que no posean el delimitador (o separador) no sean mostradas.
+--output-delimiter: Indica que los campos, al ser mostrados en pantalla, sean separados por la cadena de texto indicada.
+```
+
+Ejemplos, casos típicos:
+
+```console
+$ cat archivo.csv
+dato1,dato2,dato3,dato4,dato5,dato6
+
+$ cut -f 2-4 -d "," archivo.csv
+dato2,dato3,dato4
+
+$ cut -f 2,4 -d "," archivo.csv
+dato2,dato4
+
+$ cut -f 2 -d "," archivo.csv
+dato2
 ```
 
 ```console
+$ echo "dato1,dato2,dato3,dato4,dato5,dato6" | cut -f 2-4 -d ","
 
+dato2,dato3,dato4
+```
+
+```console
+$ cut -f 2-4 -d "," --output-delimiter="|" archivo.csv
+
+dato2|dato3|dato4
+```
+
+```console
+$ cut -f 2-4 -d "," --output-delimiter="|" archivo.csv > salida.txt
+
+$ cat salida.txt
+dato2|dato3|dato4
 ```
 
 ### sed
 
 ```console
+sed [-ns] '[direccion] instruccion argumentos'
 
+$ sed [opciones] myfile
+$ sed [opciones]  myfile > salida.txt  
+$ comando1 | sed [opciones]
+$ comando1 | sed [opciones] > salida.txt
 ```
 
 ```console
+$ sed [-ns] '[direccion] instruccion argumentos'
 
+[direccion] es opcional, siendo un número de línea (N), rango de números de línea (N,M) o búsqueda de regexp (/cadena/) indicando el ámbito de actuación de las instrucciones. Si no se especifica [direccion], se actúa sobre todas las líneas del flujo.
+
+Instruccion puede ser:
+    i = Insertar línea antes de la línea actual.
+    a = Insertar línea después de la línea actual.
+    c = Cambiar línea actual.
+    d = Borrar línea actual.
+    p = Imprimir línea actual en stdout.
+    s = Sustituir cadena en línea actual.
+    r fichero = Añadir contenido de "fichero" a la línea actual.
+    w fichero = Escribir salida a un fichero.
+    ! = Aplicar instrucción a las líneas no seleccionadas por la condición.
+    q = Finalizar procesamiento del fichero.
+
+    -n: No mostrar por stdout las líneas que están siendo procesadas.
+
+    -s: Tratar todos los ficheros entrantes como flujos separados.
+```
+
+### Ejemplos de uso:
+
+Imprimir líneas:
+
+```console
+$ sed -n '1p' myfile
+
+$ sed -n '5,10p' myfile
+```
+
+Eliminar líneas
+
+```console
+$ sed '5d' myfile
+
+$ sed '2,7 d' myfile
+
+$ sed '/cadena-texto/d' myfile
+```
+
+Insertar y agregar texto:
+
+```console
+$ sed '2i\insertar este texto arriba de la 2da línea.' myfile
+```
+
+```console
+$ sed '2a\insertar este texto abajo de la 2da línea.' myfile
+```
+
+Sustitución de líneas:
+```console
+$ sed '3c\Cambio la tercera linea de texto' myfile
+```
+
+Sustitución de texto
+
+```console
+$ echo "Hola Mundo" | sed 's/Mundo/Linux/'
+Hola Linux
+
+$ sed 's/texto/otro texto/' myfile > salida.txt
+```
+
+```console
+$ echo "Hola Mundo Mundo" | sed 's/Mundo/Linux/'
+Hola Linux Mundo
+
+$ echo "Hola Mundo Mundo" | sed 's/Mundo/Linux/g'
+Hola Linux Linux
+
+# g = global
+```
+
+```console
+$ echo "Hola Mundo Hola" | sed 's/Hola/(&)/'
+(Hola) Mundo Hola
+
+$ echo "Hola Mundo Hola" | sed 's/Hola/(&)/g'
+(Hola) Mundo (Hola)
+```
+
+```console
+$ sed '1,10 s/cadena1/cadena2/g' myfile
+
+# Sustituir apariciones de cadena1 por cadena2 en las líneas 1 a 10
+```
+
+```console
+$ sed 's/[2-5]/Numero &/' myfile
+
+# Regular expresion
+```
+
+```console
+ $ sed -e 's/This/That/; s/test/another test/' ./myfile
 ```
 
 ### sort

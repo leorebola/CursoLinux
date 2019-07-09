@@ -55,7 +55,9 @@ users:x:100:user65247,user46293,user50222,user0970,user6920,user3162,user8340,us
 
 ## Intérprete de comandos (shell)
 
-![](images/1/ShellOInterpreteDeComandos.png)
+| ![](images/1/ShellOInterpreteDeComandos.png) | 
+|:--:| 
+| *Image from: https://blog.carreralinux.com.ar/wp-content/uploads/2018/07/ShellOInterpreteDeComandos.png* |
 
 ![](images/1/term.png)
 
