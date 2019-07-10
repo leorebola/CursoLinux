@@ -416,31 +416,100 @@ $ sed 's/[2-5]/Numero &/' myfile
 ### sort
 
 ```console
+$ sort myfile
 
+$ sort myfile > salida-ordenada.txt
 ```
 
 ```console
+$ sort myfile1 myfile2
+```
 
+Parámetros útiles:
+
+```console
+    -f : Las mayúsculas y las minúsculas se van a tratar de forma diferente.
+
+    -n : Ordenar los campos numéricos por su valor numérico.
+
+    -r : Ordenación inversa (de mayor a menor).
+
+    -knumero : Por cual columna o campo vamos a realizar la ordenación.
+
+    -t: Configura un delimitador de campo. Por default es el espacio en blanco.
+    
+    -u: Suprimir todas las líneas repetidas después de la ordenación.
+
+    -o myfile: Escribir el resultado en "myfile".
+```
+
+Ejemplos:
+
+```console
+$ cat /etc/passwd | sort -t":" -k3nr
+```
+
+```console
+$ sort -o myfile -u myfile
 ```
 
 ### uniq
 
 ```console
-
+$ uniq myfile
 ```
 
+Parámetros:
 ```console
+-d: muestra una sola ocurrencia de las líneas duplicadas.
 
+-u: muestra las líneas que no poseen repeticiones.
+
+-c: cuenta el número de ocurrencias de cada renglón.
+
+-i: se ignora las Mayúsculas/Minúsculas al hacer la comparación.
+
+-f: ignorar los N primeros campos.
 ```
 
 ### shuf
 
 ```console
-
+$ shuf-i 1-999-n 10
 ```
 
 ```console
+$ cat numeros.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
 
+$ shuf numeros.txt
+8
+7
+9
+4
+3
+2
+6
+5
+1
+
+$ shuf -n 3 numeros.txt
+1
+2
+4
+
+$ shuf -e 1 2 3 4 5 6 7 8 9
+3
+7
+9
 ```
 
 ## Unir ficheros ##
