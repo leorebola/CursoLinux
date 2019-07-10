@@ -517,9 +517,64 @@ $ shuf -e 1 2 3 4 5 6 7 8 9
 - paste
 - join
 
+### paste
+
+```console
+$ cat dnis.txt
+11111111
+22222222
+33333333
+
+$ cat nombres.txt
+Homero Simpson
+Apu Nahasapeemapetilon
+Willie el jardinero
+
+# cat paises.txt
+Estados Unidos
+India
+Escocia
+
+$ paste dnis.txt nombres.txt paises.txt
+11111111        Homero Simpson  Estados Unidos
+22222222        Apu Nahasapeemapetilon  India
+33333333        Willie el jardinero     Escocia
+
+$ paste -d : dnis.txt nombres.txt paises.txt
+11111111:Homero Simpson:Estados Unidos
+22222222:Apu Nahasapeemapetilon:India
+33333333:Willie el jardinero:Escocia
+```
+
+```console
+$ paste -s dnis.txt nombres.txt paises.txt
+11111111        22222222        33333333
+Homero Simpson  Apu Nahasapeemapetilon  Willie el jardinero
+Estados Unidos  India   Escocia
+
+```
+
+### join
+
+```console
+$ cat ejemplo1.txt
+jorge sandra
+maría juan
+
+$ cat ejemplo2.txt
+alberto marta
+jorge sofía
+
+$ join ejemplo1.txt ejemplo2.txt
+jorge sandra sofía
+```
+
 ## Manipulación de cadenas de texto ##
 
 - extraer
 - borrar
 - reemplazar
 
+```console
+$ echo "texto" | comando
+```
