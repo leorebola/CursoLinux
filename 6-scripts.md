@@ -21,6 +21,18 @@ echo "En total son" $(ls -la | wc -l) "archivos"
 echo `date` " - fin de ejecución" >> mi-script.log
 ```
 
+## Ejecutar un shell script
+
+```console
+$ chmod +x my-script.sh
+
+$ sh my-script.sh
+
+# o:
+
+$ ./my-script.sh
+```
+
 ## Variables
 
 ```sh
@@ -136,6 +148,19 @@ else
 fi
 ```
 
+```sh
+DIRECTORIO=$1
+
+# Chequear existencia de directorio
+if [ -d $DIRECTORIO ]
+then
+    echo "El directorio \"$DIRECTORIO\" existe."
+else
+    echo "El directorio \"$DIRECTORIO\" no existe y será creado."
+    mkdir $DIRECTORIO
+fi
+```
+
 ### for
 
 ```sh
@@ -172,7 +197,7 @@ NUM=$1
 if [[ $NUM -le 0 || $NUM -ge 10 ]]
 then
     echo "El número ingresado es incorrecto."
-    exit
+    exit 1
 fi
 
 case $NUM in
@@ -215,6 +240,73 @@ fi
 ```
 
 ```sh
+while [[ -n $1 ]]
+do
+        echo "$1"
+        shift
+done
+```
+
+```sh
+# file:test-parameters.sh
+
+echo 'Resultado de $#:' $#
+echo 'Resultado de $@:' $@
+echo 'Resultado de $?:' $?
+```
+
+Salida:
+```console
+$ test-parameters.sh "Hola" 123 "Linux"
+
+Resultado de $#: 3
+Resultado de $@: Hola 123 Linux
+Resultado de $?: 0
+```
+
+Códigos de salida: $?
+
+### Ejemplo:
+
+```sh
+# file:test-code.sh
+
+touch /root/myfile.txt
+echo "Archivo creado!"
+```
+
+```console
+$ sh test-code.sh
+touch: cannot touch ‘/root/myfile.txt’: Permission denied
+Archivo creado!
+```
+
+```sh
+# file:test-code.sh
+
+touch /root/myfile.txt 2> /dev/null
+
+if [ $? -eq 0 ]
+then
+  echo "Archivo creado exitosamente."
+  exit 0
+else
+  echo "No se pudo crear el archivo." >&2
+  exit 1
+fi
+```
+
+Ejecución:
+```console
+$ test-code.sh
+No se pudo crear el archivo.
+$ echo $?
+1
+```
+
+### Interactivo:
+
+```sh
 echo -n "Ingrese un numero: "
 read VAR
 
@@ -225,6 +317,8 @@ else
     echo "El número ingresado es menor a 10."
 fi
 ```
+
+
 
 ## Funciones
 
