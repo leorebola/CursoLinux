@@ -54,7 +54,7 @@ Su nombre es: Juan Perez
 Su edad es: 30
 ```
 
-## Condicionales
+## Comparación
 
 ### Comparaciones de cadenas alfanuméricas
 
@@ -105,6 +105,8 @@ fichero1 -nt fichero2	fichero1 es mas reciente que fichero2
 fichero1 -ot fichero2	fichero1 es mas antiguo que fichero2
 ```
 
+## Condicionales y Bucles
+
 ### if
 
 ```sh
@@ -134,8 +136,6 @@ else
 fi
 ```
 
-## Bucles
-
 ### for
 
 ```sh
@@ -162,6 +162,36 @@ do
 
      let i=$i+1
 done
+```
+
+### case
+
+```sh
+NUM=$1
+
+if [[ $NUM -le 0 || $NUM -ge 10 ]]
+then
+    echo "El número ingresado es incorrecto."
+    exit
+fi
+
+case $NUM in
+    0)
+        echo "El número ingresado es cero"
+        ;;
+    1)
+        echo "El número ingresado es uno"
+        ;;
+    2)
+        echo "El número ingresado es dos"
+        ;;
+    3)
+        echo "El número ingresado es tres"
+        ;;
+    *)
+        echo "El número ingresado es mayor a 3 y menor a 10"
+        ;;
+esac
 ```
 
 ## Pasar parámetros
@@ -198,6 +228,8 @@ fi
 
 ## Funciones
 
+Declarar una función:
+
 ```sh
 function function1
 {
@@ -213,10 +245,14 @@ function1
 function2
 ```
 
+Salida:
+
 ```sh
 Esta es la function1
 Esta es la function2
 ```
+
+Funciones con parámetros:
 
 ```sh
 function function1
@@ -232,6 +268,8 @@ function2()
 function1 "param1"
 function2 "param2"
 ```
+
+Salida:
 
 ```sh
 Esta es la function1 con parámetro: param1
