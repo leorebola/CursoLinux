@@ -121,13 +121,11 @@ done
 ### while
 
 ```sh
-#while [ $i -lt $max ]
 while [[ $i < 5 ]]
 do
      echo "Iteración $i ejecutada."
 
      let i=$i+1
-     # i=$(( $i + 1 ))
 done
 ```
 
