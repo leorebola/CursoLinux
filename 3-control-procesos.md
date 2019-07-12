@@ -94,10 +94,16 @@ free -t
 $ top
 ```
 
-![](images/3/top_top.png)
+| ![](images/3/top_top.png) | 
+|:--:| 
+| *Image from: https://www.svennd.be/wp-content/uploads/2017/02/top_top.png* |
 
-![](images/3/top_tail.png)
 
+| ![](images/3/top_tail.png) | 
+|:--:| 
+| *Image from: https://www.svennd.be/wp-content/uploads/2017/02/top_tail.png* |
+
+### Load Average explicación:
 - https://aplicacionesysistemas.com/load-average-carga-de-cpu-en-linux/
 
 Tip:

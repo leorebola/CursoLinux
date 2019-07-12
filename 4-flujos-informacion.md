@@ -2,7 +2,9 @@
 
 ## Redirigir flujos de información ##
 
-![](images/4/std.png)
+| ![](images/4/std.png) | 
+|:--:| 
+| *Image from: codigofacilito.com* |
 
  ### Flujos de E/S (Entrada y Salida)
 
@@ -65,7 +67,9 @@ $ comando1 | comando2
 
 ![](images/4/tuberias.png)
 
-![](images/4/pipelines.jpg)
+| ![](images/4/Pipelines.jpg) | 
+|:--:| 
+| *Image from: http://www.eservers-hosting.com/sys/know-foto/Pipelines.jpg* |
 
 ```console
 $ cat archivo.txt | wc

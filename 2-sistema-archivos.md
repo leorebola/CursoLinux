@@ -22,18 +22,24 @@ Comandos:
 - **cd**: cambiar de directorio.
 - **ls**: listar contenido de un directorio.
 
-![](images/2/estructura1.png)
+| ![](images/2/estructura1.png) | 
+|:--:| 
+| *Image from: https://thelinuxalchemist.files.wordpress.com/2018/06/estructura1.png* |
 
 ¿Cómo llegar desde el directorio F hasta el H?
 
-![](images/2/relativa.png)
+| ![](images/2/relativa.png) | 
+|:--:| 
+| *Image from: https://thelinuxalchemist.files.wordpress.com/2018/06/relativa.png* |
 
 
 ```console
 user@ubuntu:/A/B/F$ cd ../../D/H/
 ```
 
-![](images/2/absoluta.png)
+| ![](images/2/absoluta.png) | 
+|:--:| 
+| *Image from: https://thelinuxalchemist.files.wordpress.com/2018/06/absoluta.png* |
 
 ```console
 user@ubuntu:/A/B/F/$ cd /A/D/H/
@@ -267,7 +273,9 @@ chmod [permisos] [file]
 chmod -R [permisos] [directory]
 ```
 
-![](images/2/chmod.png)
+| ![](images/2/chmod.png) | 
+|:--:| 
+| *Image from: https://www.booleanworld.com/wp-content/uploads/2018/04/43260_115.png* |
 
 ```console
 chmod 755 file.txt
@@ -579,7 +587,9 @@ $ ls -li
 
 ### > Enlaces duros, fuertes o **hard links**:
 
-![](images/2/enlaces-duros-linux-768x607.png)
+| ![](images/2/enlaces-duros-linux-768x607.png) | 
+|:--:| 
+| *Image from: https://geekland.eu/wp-content/uploads/2018/08/enlaces-duros-linux.png* |
 
 ```consola
 leonardo@leonardo-VB:~/Documentos$ ls -li origin.txt 
@@ -594,7 +604,9 @@ leonardo@leonardo-VB:~/Documentos$ ls -li origin.txt
 1709566 -rw-r--r-- 2 leonardo leonardo 12 jun 17 11:23 enlace-origin.txt
 ```
 
-![](images/2/Simplified_illustration_of_hard_links.png)
+| ![](images/2/Simplified_illustration_of_hard_links.png) | 
+|:--:| 
+| *Image from: wikipedia.org* |
 
 
 ### Enlaces duros recursivos
